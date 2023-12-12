@@ -1,5 +1,55 @@
 /* resources/css/interactive.css */
 
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+}
+
+.navbar {
+    background: linear-gradient(to right, #ff00cc, #3333cc);
+    color: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #00bcd4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Animation for navbar links */
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.navbar a {
+    animation: moveInRight 0.5s ease-out;
+}
+
+
+
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -7,12 +57,13 @@
 }
 
 h2 {
-    color: #333;
+    color: #009688; /* Turquoise color */
 }
 
 label {
     display: block;
     margin-top: 10px;
+    color: #009688; /* Turquoise color */
 }
 
 input,
@@ -23,10 +74,11 @@ button {
     margin-top: 5px;
     margin-bottom: 15px;
     box-sizing: border-box;
+    border: 1px solid #009688; /* Turquoise color */
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Green color */
     color: white;
     border: none;
     padding: 15px 20px;
@@ -36,21 +88,22 @@ button {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Darker green color */
+    transform: translateY(-5px);
 }
 
-/* Efek interaktif */
+/* Interactive effect */
 input:focus,
 textarea:focus {
-    border: 2px solid #4CAF50;
+    border: 2px solid #4CAF50; /* Green color */
     transition: border 0.3s ease;
 }
 
-/* Animasi bergerak sendiri */
+/* Self-moving animation */
 @keyframes move {
     0% {
         transform: translateY(0);
