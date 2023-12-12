@@ -63,4 +63,10 @@ class MenuController extends Controller
 
         return redirect()->route('menus.index')->with('success', 'Menu berhasil dihapus.');
     }
+
+    public function indexTasya()
+    {
+        $menu = Menu::all();
+        return view('tasya.index', compact('menu'));
+    }
 }
