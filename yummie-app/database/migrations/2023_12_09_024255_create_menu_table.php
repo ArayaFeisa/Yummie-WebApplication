@@ -11,21 +11,28 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('menu', function (Blueprint $table) {
-            $table->increments('menu_id');
+        Schema::create('menus', function (Blueprint $table) {
+            $table->id('menu_id');
             $table->string('nama_menu');
-            $table->double('harga');
-            $table->text('deskripsi');
-            $table->string('gambar_url');
+            $table->text('deskripsi')->nullable();
+            $table->decimal('harga', 10, 2);
+            $table->string('gambar_url')->nullable();
             $table->timestamps();
+        });
+
+        // Batasi operasi CRUD hanya pada operasi Read
+        Schema::table('menus', function (Blueprint $table) {
+            // Nonaktifkan pembuatan tabel
+            $table->disableForeignKeyConstraints();
+            $table->disableIndexCreation();
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('menu');
+        Schema::dropIfExists('menus');
     }
 };
