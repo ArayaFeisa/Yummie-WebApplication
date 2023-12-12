@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\StockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-use App\Http\Controllers\MenuController;
-
 Route::resource('menu', MenuController::class);
 
+Route::resource('stock', StockController::class);
