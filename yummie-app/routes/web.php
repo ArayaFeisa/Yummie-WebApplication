@@ -19,11 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< Updated upstream
 Route::resource('menu', MenuController::class);
 
 Route::resource('stock', StockController::class);
-=======
-//tasya
-Route::get('/menu', 'MenuController@index')->name('menu');
->>>>>>> Stashed changes

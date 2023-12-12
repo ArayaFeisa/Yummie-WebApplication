@@ -18,14 +18,15 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($menus as $menu)
-                    <tr>
-                        <td>{{ $menu->nama }}</td>
-                        <td>{{ $menu->harga }}</td>
-                        <td>{{ $menu->deskripsi }}</td>
-                        <td><img src="{{ asset('storage/images/' . $menu->gambar) }}" alt="{{ $menu->nama }}" width="100"></td>
-                    </tr>
-                @endforeach
+            <?php foreach($menus as $menu): ?>
+                <tr>
+                    <td><?= $menu->nama ?></td>
+                    <td><?= $menu->harga ?></td>
+                    <td><?= $menu->deskripsi ?></td>
+                    <td><img src="<?= asset('storage/images/' . $menu->gambar) ?>" alt="<?= $menu->nama ?>" width="100"></td>
+                </tr>
+            <?php endforeach; ?>
+
             </tbody>
         </table>
     </div>
