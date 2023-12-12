@@ -18,12 +18,12 @@
                 </tr>
             </thead>
             <tbody>
-            <?php foreach($menus as $menu): ?>
+            <?php foreach($menu as $item): ?>
                 <tr>
-                    <td><?= $menu->nama ?></td>
-                    <td><?= $menu->harga ?></td>
-                    <td><?= $menu->deskripsi ?></td>
-                    <td><img src="<?= asset('storage/images/' . $menu->gambar) ?>" alt="<?= $menu->nama ?>" width="100"></td>
+                    <td><?= $item->nama ?></td>
+                    <td><?= $item->harga ?></td>
+                    <td><?= $item->deskripsi ?></td>
+                    <td><img src="<?= asset('storage/images/' . $item->gambar) ?>" alt="<?= $item->nama ?>" width="100"></td>
                 </tr>
             <?php endforeach; ?>
 

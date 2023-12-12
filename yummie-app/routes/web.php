@@ -22,3 +22,5 @@ Route::get('/', function () {
 Route::resource('menu', MenuController::class);
 
 Route::resource('stock', StockController::class);
+//tasya
+Route::get('/menu', [MenuController::class, 'indexTasya'])->name('menu');

@@ -9,20 +9,23 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(){
+    public function up()
+    {
         Schema::create('menu', function (Blueprint $table) {
             $table->increments('menu_id');
-            $table->string('nama');
+            $table->string('nama_menu');
             $table->double('harga');
             $table->text('deskripsi');
-            $table->string('gambar');
+            $table->string('gambar_url');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down()
     {
         Schema::dropIfExists('menu');
     }
-
 };
