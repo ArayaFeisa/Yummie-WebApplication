@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Menu;
+use App\Models\DaftarMenu;
 
-class TasyaController extends Controller
+class DaftarMenuController extends Controller
 {
     //
     public function index()
     {
-        $menu = Menu::all();
+        $menu = DaftarMenu::all();
         return view('daftarMenu.tasya', compact('menu'));
     }
 }

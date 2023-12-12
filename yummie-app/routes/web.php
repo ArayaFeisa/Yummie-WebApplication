@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\StockController;
-use App\Http\Controllers\TasyaController;
+use App\Http\Controllers\DaftarMenuController;
 
 
 /*
@@ -26,4 +26,4 @@ Route::post('/menus', [MenuController::class, 'store'])->name('menus.store');
 
 Route::resource('stock', StockController::class);
 //tasya
-Route::get('buku_menu', [TasyaController::class, 'index']);
+Route::get('buku_menu', [DaftarMenuController::class, 'index']);
