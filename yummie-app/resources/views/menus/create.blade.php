@@ -1,11 +1,11 @@
 <!-- resources/views/menus/create.blade.php -->
 
-@extends('layouts.menu')
+@extends('layouts.create')
 
 @section('content')
 <div class="container">
     <h2>Tambah Menu</h2>
-    <form action="{{ route('menu.store') }}" method="post">
+    <form action="{{ route('menus.store') }}" method="post">
         @csrf
         <label for="nama_menu">Nama Menu:</label>
         <input type="text" name="nama_menu" required>

@@ -6,31 +6,20 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up()
-    {
+    public function up(){
         Schema::create('menu', function (Blueprint $table) {
-            $table->id('menu_id');
+            $table->increments('menu_id');
             $table->string('nama_menu');
-            $table->text('deskripsi')->nullable();
-            $table->decimal('harga', 10, 2);
-            $table->string('gambar_url')->nullable();
+            $table->double('harga');
+            $table->text('deskripsi');
+            $table->string('gambar_url');
             $table->timestamps();
         });
-        
-        Schema::table('menu', function (Blueprint $table) {
-            $table->disableForeignKeyConstraints();
-            $table->disableIndexCreation();
-        });
+
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('menu');
     }
 };
