@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(){
         Schema::create('menu', function (Blueprint $table) {
             $table->increments('menu_id');
-            $table->string('nama');
+            $table->string('nama_me');
             $table->double('harga');
             $table->text('deskripsi');
-            $table->string('gambar');
+            $table->string('gambar_url');
             $table->timestamps();
         });
     }
