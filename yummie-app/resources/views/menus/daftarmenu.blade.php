@@ -1,6 +1,6 @@
 <!-- resources/views/menus/index.blade.php -->
 
-@extends('layouts.menu')
+@extends('layouts.daftarmenu')
 
 @section('content')
 <div class="container">

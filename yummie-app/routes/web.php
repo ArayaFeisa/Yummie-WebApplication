@@ -21,7 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('menu', MenuController::class);
+Route::resource('daftarmenu', MenuController::class);
+Route::post('/menus', [MenuController::class, 'store'])->name('menus.store');
 
 Route::resource('stock', StockController::class);
 //tasya

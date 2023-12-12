@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('menu', function (Blueprint $table) {
             $table->id('menu_id');
             $table->string('nama_menu');
-            $table->text('deskripsi')->nullable();
-            $table->decimal('harga', 10, 2);
-            $table->string('gambar_url')->nullable();
+            $table->double('harga');
+            $table->text('deskripsi');
+            $table->string('gambar_url');
             $table->timestamps();
         });
 
@@ -28,9 +28,6 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('menu');
