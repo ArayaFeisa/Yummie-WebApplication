@@ -32,7 +32,6 @@ body {
     margin: 0 auto;
 }
 
-/* Animation for navbar links */
 @keyframes moveInRight {
     0% {
         opacity: 0;
@@ -57,13 +56,13 @@ body {
 }
 
 h2 {
-    color: #009688; /* Turquoise color */
+    color: #009688;
 }
 
 label {
     display: block;
     margin-top: 10px;
-    color: #009688; /* Turquoise color */
+    color: #009688;
 }
 
 input,
@@ -74,11 +73,11 @@ button {
     margin-top: 5px;
     margin-bottom: 15px;
     box-sizing: border-box;
-    border: 1px solid #009688; /* Turquoise color */
+    border: 1px solid #009688; 
 }
 
 button {
-    background-color: #4CAF50; /* Green color */
+    background-color: #4CAF50; 
     color: white;
     border: none;
     padding: 15px 20px;
@@ -92,18 +91,16 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* Darker green color */
+    background-color: #45a049;
     transform: translateY(-5px);
 }
 
-/* Interactive effect */
 input:focus,
 textarea:focus {
-    border: 2px solid #4CAF50; /* Green color */
+    border: 2px solid #4CAF50; 
     transition: border 0.3s ease;
 }
 
-/* Self-moving animation */
 @keyframes move {
     0% {
         transform: translateY(0);
