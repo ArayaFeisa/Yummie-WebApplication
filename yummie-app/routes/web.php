@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\TasyaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +25,4 @@ Route::resource('menu', MenuController::class);
 
 Route::resource('stock', StockController::class);
 //tasya
-Route::get('/menu', [MenuController::class, 'indexTasya'])->name('menu');
+Route::get('buku_menu', [TasyaController::class, 'index']);

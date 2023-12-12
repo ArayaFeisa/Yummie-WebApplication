@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('menu', function (Blueprint $table) {
             $table->id('menu_id');
             $table->string('nama_menu');
             $table->text('deskripsi')->nullable();
@@ -21,7 +21,7 @@ return new class extends Migration
         });
 
         // Batasi operasi CRUD hanya pada operasi Read
-        Schema::table('menus', function (Blueprint $table) {
+        Schema::table('menu', function (Blueprint $table) {
             // Nonaktifkan pembuatan tabel
             $table->disableForeignKeyConstraints();
             $table->disableIndexCreation();
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('menu');
     }
 };
