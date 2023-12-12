@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< Updated upstream
 use Illuminate\Http\Request;
 use App\Models\Menu;
+=======
+use App\Models\Menu;
+use Illuminate\Http\Request;
+>>>>>>> Stashed changes
 
 class MenuController extends Controller
 {
     public function index()
     {
         $menus = Menu::all();
+<<<<<<< Updated upstream
         return view('menus.index', compact('menus'));
     }
 
@@ -62,5 +68,8 @@ class MenuController extends Controller
         Menu::findOrFail($id)->delete();
 
         return redirect()->route('menus.index')->with('success', 'Menu berhasil dihapus.');
+=======
+        return view('menu.index', compact('menus'));
+>>>>>>> Stashed changes
     }
 }
