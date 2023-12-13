@@ -45,7 +45,7 @@
     </style>
 </head>
 <body>
-    <h1>Menu Pemesanan</h1>
+    <h1>Halaman Informasi Stock</h1>
 
 <form action="{{ route('stock.store') }}" method="POST">
 @csrf
