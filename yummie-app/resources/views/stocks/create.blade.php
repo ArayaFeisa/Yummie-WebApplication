@@ -53,7 +53,8 @@
         <div class="menu-item">
             <img src="yummie-app/resources/views/stocks/image/Nasi-Goreng.jpg" alt="Nasi Goreng">
             <label for="nasiGoreng">Nasi Goreng</label>
-            <button type="button">Tambahkan</button>
+            <input type="hidden" name="menu[]" value="Nasi Goreng">
+            <button type="submit" name="action" value="add">Tambahkan</button>
         </div>
 
         <div class="menu-item">

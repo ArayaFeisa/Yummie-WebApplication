@@ -21,11 +21,11 @@ return new class extends Migration
         });
 
         // Batasi operasi CRUD hanya pada operasi Read
-        Schema::table('menu', function (Blueprint $table) {
-            // Nonaktifkan pembuatan tabel
-            $table->disableForeignKeyConstraints();
-            $table->disableIndexCreation();
-        });
+        // Schema::table('menu', function (Blueprint $table) {
+        //     // Nonaktifkan pembuatan tabel
+        //     $table->disableForeignKeyConstraints();
+        //     $table->disableIndexCreation();
+        // });
     }
 
     public function down(): void
