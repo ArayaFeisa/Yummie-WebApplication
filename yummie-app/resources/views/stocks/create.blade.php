@@ -17,16 +17,24 @@
             text-align: center;
         }
 
-        .menu-item {
+        .menu-item-container {
             display: flex;
-            align-items: center;
-            margin-bottom: 15px;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
 
-        img {
+        .menu-item {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .menu-item img {
             width: 50px;
             height: 50px;
-            margin-right: 10px;
+            margin-bottom: 10px;
         }
 
         button {
@@ -34,51 +42,45 @@
             font-size: 16px;
             cursor: pointer;
         }
-
     </style>
 </head>
 <body>
     <h1>Menu Pemesanan</h1>
-    
-    <form action="process.php" method="post">
-        <label for="nasiGoreng">Nasi Goreng</label>
-        <button type="button" onclick="addToCart('nasiGoreng')">Pesan</button><br>
 
-        <label for="ayamBakar">Ayam Bakar</label>
-        <button type="button" onclick="addToCart('ayamBakar')">Pesan</button><br>
+<form action="{{ route('stock.store') }}" method="POST">
+@csrf
+    <div class="menu-item-container">
+        <div class="menu-item">
+            <img src="yummie-app/resources/views/stocks/image/Nasi-Goreng.jpg" alt="Nasi Goreng">
+            <label for="nasiGoreng">Nasi Goreng</label>
+            <button type="button">Tambahkan</button>
+        </div>
 
-        <label for="mieSeafood">Mie Goreng Seafood</label>
-        <button type="button" onclick="addToCart('mieSeafood')">Pesan</button><br>
+        <div class="menu-item">
+            <img src="path/to/ayamBakar-image.jpg" alt="Ayam Bakar">
+            <label for="ayamBakar">Ayam Bakar</label>
+            <button type="button">Tambahkan</button>
+        </div>
 
-        <label for="satePadang">Sate Padang</label>
-        <button type="button" onclick="addToCart('satePadang')">Pesan</button><br>
+        <div class="menu-item">
+            <img src="path/to/miegorengseafood-image.jpg" alt="Mie Goreng Seafood">
+            <label for="mieGoreng">Mie Goreng Seafood</label>
+            <button type="button">Tambahkan</button>
+        </div>
 
-        <label for="esTeler">Es Teler</label>
-        <button type="button" onclick="addToCart('esTeler')">Pesan</button><br>
+        <div class="menu-item">
+            <img src="path/to/satePadang-image.jpg" alt="Sate Padang">
+            <label for="satePadang">Sate Padang</label>
+            <button type="button">Tambahkan</button>
+        </div>
 
-        <input type="hidden" name="cart" id="cart" value="">
-        <button type="submit">Submit Pesanan</button>
-    </form>
-
-    <script>
-        var cart = {};
-
-        function addToCart(menu) {
-            if (cart[menu]) {
-                cart[menu]++;
-            } else {
-                cart[menu] = 1;
-            }
-
-            updateCartInput();
-        }
-
-        function updateCartInput() {
-            document.getElementById('cart').value = JSON.stringify(cart);
-        }
-    </script>
+        <div class="menu-item">
+            <img src="path/to/esTeler.jpg" alt="Es Teler">
+            <label for="esTeler">Es Teler</label>
+            <button type="button">Tambahkan</button>
+        </div>
+    </div>
+</form>
 </body>
 </html>
-
-    
 @endsection
