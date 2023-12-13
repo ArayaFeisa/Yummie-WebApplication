@@ -30,20 +30,17 @@ class StockController extends Controller
     {
         $menus = $request->input('menu');
 
-        // Loop melalui setiap menu dan tambahkan stock_amount
         foreach ($menus as $menu) {
             $stock = Stock::where('stock_name', $menu)->first();
 
-            // Jika stock belum ada, buat stock baru
             if (!$stock) {
                 Stock::create([
                     'stock_name' => $menu,
                     'stock_amount' => 1,
                 ]);
             } else {
-                // Jika stock sudah ada, tambahkan stock_amount
-                $stock->stock_amount += 1;
-                $stock->save();
+                // $stock->stock_amount += 1;
+                $stock->increment('stock_amount');
             }
         }
 
